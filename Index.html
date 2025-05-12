@@ -1,28 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Página</title>
-        <link rel="stylesheet" href="estil.css">
-        <script src="jas.js" defer></script> 
-    </head>
-    <body>
-        <header>
-            <h1 class="titulo-sitio">Mi Sitio Web</h1>
-            <nav>
-                <ul class="menu">
-                    <li><a href="#inicio" onclick="cambiarColorFondo('lightblue')">Inicio</a></li>
-                    <li><a href="#acerca-de" onclick="cambiarColorFondo('lightgreen')">Acerca de</a></li>
-                    <li><a href="#contacto" onclick="cambiarColorFondo('lightcoral')">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section class="contenido">
-                <h2>Ejemplo</h2>
-                <p>I'm tonto </p>
-            </section>
-        </main>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio de Básquet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sitio de Básquet</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#equipos">Equipos</a></li>
+                <li><a href="#jugadores">Jugadores</a></li>
+                <li><a href="#estadisticas">Estadísticas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Bienvenido al sitio de básquet donde encontrarás toda la información sobre tus equipos y jugadores favoritos.</p>
+        </section>
+
+        <section id="equipos">
+            <h2>Equipos</h2>
+            <p>Descubre información sobre equipos de básquet de diferentes ligas alrededor del mundo.</p>
+        </section>
+
+        <section id="jugadores">
+            <h2>Jugadores</h2>
+            <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
+        </section>
+
+        <section id="estadisticas">
+            <h2>Estadísticas</h2>
+            <p>Mira estadísticas detalladas sobre los equipos y jugadores.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Envíanos tus comentarios o preguntas. ¡Estamos aquí para ayudarte!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
