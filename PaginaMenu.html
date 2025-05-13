@@ -1,56 +1,372 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio de Básquet</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sitio de Básquet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55'); /* Fondo de básquet */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #f9a826;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0.5rem 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      background-color: #f9a826;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #e68a00;
+    }
+
+    main {
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    section h2 {
+      color: #f9a826;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Sitio de Básquet</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#equipos">Equipos</a></li>
-                <li><a href="#jugadores">Jugadores</a></li>
-                <li><a href="#estadisticas">Estadísticas</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Sitio de Básquet</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#equipos">Equipos</a></li>
+        <li><a href="#jugadores">Jugadores</a></li>
+        <li><a href="#estadisticas">Estadísticas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Inicio</h2>
-            <p>Bienvenido al sitio de básquet donde encontrarás toda la información sobre tus equipos y jugadores favoritos.</p>
-        </section>
+  <main>
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p>Bienvenido al sitio de básquet donde encontrarás toda la información sobre tus equipos y jugadores favoritos.</p>
+    </section>
 
-        <section id="equipos">
-            <h2>Equipos</h2>
-            <p>Descubre información sobre equipos de básquet de diferentes ligas alrededor del mundo.</p>
-        </section>
+    <section id="equipos">
+      <h2>Equipos</h2>
+      <p>Descubre información sobre equipos de básquet de diferentes ligas alrededor del mundo.</p>
+    </section>
 
-        <section id="jugadores">
-            <h2>Jugadores</h2>
-            <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
-        </section>
+    <section id="jugadores">
+      <h2>Jugadores</h2>
+      <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
+    </section>
 
-        <section id="estadisticas">
-            <h2>Estadísticas</h2>
-            <p>Mira estadísticas detalladas sobre los equipos y jugadores.</p>
-        </section>
+    <section id="estadisticas">
+      <h2>Estadísticas</h2>
+      <p>Mira estadísticas detalladas sobre los equipos y jugadores.</p>
+    </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Envíanos tus comentarios o preguntas. ¡Estamos aquí para ayudarte!</p>
-        </section>
-    </main>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Envíanos tus comentarios o preguntas. ¡Estamos aquí para ayudarte!</p>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("nav ul li a");
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substr(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sitio de Básquet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #f9a826;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0.5rem 1rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      background-color: #f9a826;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #e68a00;
+    }
+
+    main {
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    section h2 {
+      color: #f9a826;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .noticia {
+      margin-bottom: 1rem;
+      border-left: 4px solid #f9a826;
+      padding-left: 1rem;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sitio de Básquet</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#equipos">Equipos</a></li>
+        <li><a href="#jugadores">Jugadores</a></li>
+        <li><a href="#estadisticas">Estadísticas</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p>Bienvenido al sitio de básquet donde encontrarás toda la información sobre tus equipos y jugadores favoritos.</p>
+    </section>
+
+    <section id="equipos">
+      <h2>Equipos</h2>
+      <p>Descubre información sobre equipos de básquet de diferentes ligas alrededor del mundo.</p>
+    </section>
+
+    <section id="jugadores">
+      <h2>Jugadores</h2>
+      <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
+    </section>
+
+    <section id="estadisticas">
+      <h2>Estadísticas</h2>
+      <p>Mira estadísticas detalladas sobre los equipos y jugadores.</p>
+    </section>
+
+    <section id="noticias">
+      <h2>Noticias</h2>
+      <div class="noticia">
+        <h3>🏀 Lakers vencen a los Celtics en tiempo extra</h3>
+        <p>Con una actuación estelar de LeBron James, los Lakers lograron imponerse en un partido muy reñido.</p>
+      </div>
+      <div class="noticia">
+        <h3>🔥 Giannis anota 50 puntos en una noche inolvidable</h3>
+        <p>El griego lideró a los Bucks con una impresionante actuación ofensiva.</p>
+      </div>
+      <div class="noticia">
+        <h3>💥 Steph Curry rompe récord de triples en una temporada</h3>
+        <p>El base de Golden State continúa demostrando por qué es uno de los mejores tiradores de la historia.</p>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería</h2>
+      <div class="galeria">
+        <img src="https://images.unsplash.com/photo-1555375771-9e8a6a3f54b0" alt="Jugador 1">
+        <img src="https://images.unsplash.com/photo-1579982363795-422e938552c2" alt="Jugador 2">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc" alt="Partido de básquet">
+        <img src="https://images.unsplash.com/photo-1602464884863-d601f7b0f02f" alt="Entrenamiento">
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Envíanos tus comentarios o preguntas. ¡Estamos aquí para ayudarte!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("nav ul li a");
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substr(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
