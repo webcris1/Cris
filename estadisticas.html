@@ -1,174 +1,177 @@
-<!DOCTYPE html>
+         <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Estadísticas - Sitio de Básquet</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Trebuchet MS', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #e0f7fa;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sitio de Básquet - Jugadores</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f0fdf4;
+      color: #1b4332;
+      margin: 0;
+      padding: 0;
+    }
 
-    header {
-      background-color: #004d40;
-      padding: 1rem;
-      text-align: center;
-    }
+    header {
+      background-color: #2d6a4f;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #a7ffeb;
-    }
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+      letter-spacing: 1px;
+    }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-    nav a {
-      text-decoration: none;
-      color: #004d40;
-      background-color: #a7ffeb;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      background: linear-gradient(135deg, #52b788, #40916c);
+      padding: 10px 18px;
+      border-radius: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
 
-    nav a:hover {
-      background-color: #64ffda;
-    }
+    nav ul li a:hover {
+      transform: translateY(-2px);
+      background-color: #74c69d;
+    }
 
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
+    main {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    h2 {
-      text-align: center;
-      color: #b2dfdb;
-    }
+    h2 {
+      color: #2d6a4f;
+      font-size: 2em;
+      border-bottom: 2px solid #95d5b2;
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
 
-    .jugador {
-      margin-bottom: 2rem;
-    }
+    p {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
 
-    .jugador h3 {
-      margin-bottom: 0.5rem;
-      color: #18ffff;
-    }
+    .jugadores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
 
-    .jugador ul {
-      padding-left: 1.2rem;
-    }
+    .jugador {
+      background-color: #ffffff;
+      border: 1px solid #cce3d3;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
 
-    .jugador img {
-      display: block;
-      margin: 1rem auto 0;
-      max-width: 200px;
-      border-radius: 8px;
-      border: 2px solid #18ffff;
-    }
+    .jugador img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
 
-    footer {
-      background-color: #004d40;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #a7ffeb;
-      margin-top: 2rem;
-    }
-  </style>
+    .jugador h3 {
+      margin: 8px 0 4px;
+      color: #1b4332;
+      font-size: 1.2em;
+    }
+
+    .jugador p {
+      font-size: 0.95em;
+      margin: 4px 0;
+    }
+
+    footer {
+      background-color: #1b4332;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Estadísticas</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="equipos.html">Equipos</a></li>
-        <li><a href="jugadores.html">Jugadores</a></li>
-        <li><a href="estadisticas.html">Estadísticas</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>
+    <h1>Sitio de Básquet</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="equipos.html">Equipos</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="estadisticas.html">Estadísticas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <main>
-    <section>
-      <h2>Estadísticas de Jugadores</h2>
+  <main>
+    <section>
+      <h2>Jugadores</h2>
+      <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
+    </section>
 
-      <div class="jugador">
-        <h3>Stephen Curry</h3>
-        <ul>
-          <li>Puntos por partido: 30.1</li>
-          <li>Asistencias por partido: 6.2</li>
-          <li>Porcentaje de triples: 42%</li>
-        </ul>
-        <img src="imagenes/stephen-curry.jpg" alt="Stephen Curry" />
-      </div>
+    <section class="jugadores">
+      <!-- Jugador 1 -->
+      <div class="jugador">
+        <img src="imagenes/jugador1.jpg" alt="Jugador 1" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Base</p>
+        <p>Puntos por partido: 20.5</p>
+        <p>Equipo: Equipo Verde</p>
+      </div>
 
-      <div class="jugador">
-        <h3>LeBron James</h3>
-        <ul>
-          <li>Puntos por partido: 27.8</li>
-          <li>Asistencias por partido: 7.4</li>
-          <li>Rebotes por partido: 7.2</li>
-        </ul>
-        <img src="imagenes/lebron-james.jpg" alt="LeBron James" />
-      </div>
+      <!-- Jugador 2 -->
+      <div class="jugador">
+        <img src="imagenes/jugador2.jpg" alt="Jugador 2" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Escolta</p>
+        <p>Puntos por partido: 18.7</p>
+        <p>Equipo: Canasta Verde</p>
+      </div>
 
-      <div class="jugador">
-        <h3>Klay Thompson</h3>
-        <ul>
-          <li>Puntos por partido: 21.1</li>
-          <li>Porcentaje de triples: 41%</li>
-          <li>Minutos por partido: 32</li>
-        </ul>
-        <img src="imagenes/klay-thompson.jpg" alt="Klay Thompson" />
-      </div>
+      <!-- Jugador 3 -->
+      <div class="jugador">
+        <img src="imagenes/jugador3.jpg" alt="Jugador 3" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Alero</p>
+        <p>Puntos por partido: 22.3</p>
+        <p>Equipo: Verde Express</p>
+      </div>
+    </section>
+  </main>
 
-      <div class="jugador">
-        <h3>Giannis Antetokounmpo</h3>
-        <ul>
-          <li>Puntos por partido: 28.9</li>
-          <li>Rebotes por partido: 11.0</li>
-          <li>Bloqueos por partido: 1.3</li>
-        </ul>
-        <img src="imagenes/giannis.jpg" alt="Giannis Antetokounmpo" />
-      </div>
-
-      <div class="jugador">
-        <h3>Chris Paul</h3>
-        <ul>
-          <li>Asistencias por partido: 9.1</li>
-          <li>Robos por partido: 2.1</li>
-          <li>Porcentaje de tiros libres: 88%</li>
-        </ul>
-        <img src="imagenes/chris-paul.jpg" alt="Chris Paul" />
-      </div>
-
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
