@@ -4,7 +4,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sitio de Básquet - Jugadores</title>
-  <link rel="stylesheet" href="estilo.css" />
+  <style>
+    /* Fondo general y tipografía */
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f0fdf4; /* verde muy claro */
+      color: #1b4332; /* verde oscuro */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #2d6a4f; /* verde fuerte */
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+
+    /* Navegación */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #40916c; /* verde medio */
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #74c69d; /* verde claro */
+    }
+
+    /* Contenido principal */
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #2d6a4f;
+      font-size: 1.8em;
+      border-bottom: 2px solid #95d5b2;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    .jugadores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .jugador {
+      background-color: #ffffff;
+      border: 1px solid #cce3d3;
+      border-radius: 8px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .jugador img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .jugador h3 {
+      margin: 10px 0 5px;
+      color: #1b4332;
+    }
+
+    .jugador p {
+      font-size: 0.95em;
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: #1b4332;
+      color: #ffffff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -27,13 +128,39 @@
       <h2>Jugadores</h2>
       <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
     </section>
+
+    <section class="jugadores">
+      <!-- Jugador 1 -->
+      <div class="jugador">
+        <img src="imagenes/jugador1.jpg" alt="Jugador 1" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Base</p>
+        <p>Puntos por partido: 20.5</p>
+        <p>Equipo: Equipo Verde</p>
+      </div>
+
+      <!-- Jugador 2 -->
+      <div class="jugador">
+        <img src="imagenes/jugador2.jpg" alt="Jugador 2" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Escolta</p>
+        <p>Puntos por partido: 18.7</p>
+        <p>Equipo: Canasta Verde</p>
+      </div>
+
+      <!-- Jugador 3 (puedes duplicar este bloque para más jugadores) -->
+      <div class="jugador">
+        <img src="imagenes/jugador3.jpg" alt="Jugador 3" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Alero</p>
+        <p>Puntos por partido: 22.3</p>
+        <p>Equipo: Verde Express</p>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
   </footer>
-  <script src="script.js"></script>
-
 </body>
-      </html>
-              
+</html>
