@@ -1,168 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sitio de Básquet - Noticias</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: #f0f8ff;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sitio de Básquet - Noticias</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #f0f8ff;
+    }
 
-    header {
-      background-color: #0d1b2a;
-      padding: 1.5rem;
-      text-align: center;
-    }
+    header {
+      background-color: #0d1b2a;
+      padding: 1.5rem;
+      text-align: center;
+    }
 
-    header h1 {
-      margin: 0;
-      color: #ffffff;
-      font-size: 2.5rem;
-    }
+    header h1 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 2.5rem;
+    }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-    nav a {
-      text-decoration: none;
-      color: #0d1b2a;
-      background-color: #f0f8ff;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #3f72af;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
 
-    nav a:hover {
-      background-color: #a1c4fd;
-    }
+    nav a:hover {
+      background-color: #112d4e;
+      transform: translateY(-2px);
+    }
 
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
 
-    h2 {
-      text-align: center;
-      color: #bbdefb;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
+    h2 {
+      text-align: center;
+      color: #bbdefb;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
 
-    .noticia {
-      background-color: rgba(255, 255, 255, 0.08);
-      padding: 1rem;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      border-left: 4px solid #90caf9;
-    }
+    .noticia {
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #90caf9;
+    }
 
-    .noticia h3 {
-      margin-top: 0;
-      color: #ffffff;
-    }
+    .noticia h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
 
-    .noticia p {
-      color: #e3f2fd;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+    .noticia p {
+      color: #e3f2fd;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-    .imagen-noticia {
-      margin-top: 1rem;
-      text-align: center;
-    }
+    .imagen-noticia {
+      margin-top: 1rem;
+      text-align: center;
+    }
 
-    .imagen-noticia img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-    }
+    .imagen-noticia img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    }
 
-    footer {
-      background-color: #0d1b2a;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #b0bec5;
-      margin-top: 2rem;
-    }
-  </style>
+    footer {
+      background-color: #0d1b2a;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #b0bec5;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Sitio de Básquet</h1>
-    <nav>
-      <ul>
-        <li><a href="PaginaMenu.html>Inicio</a></li>
-        <li><a href="equipos.html">Equipos</a></li>
-        <li><a href="jugadores.html">Jugadores</a></li>
-        <li><a href="estadisticas.html">Estadísticas</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>
+    <h1>Sitio de Básquet</h1>
+    <nav>
+      <ul>
+        <li><a href="PaginaMenu.html">Inicio</a></li>
+        <li><a href="equipos.html">Equipos</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="estadisticas.html">Estadísticas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <main>
-    <section>
-      <h2>Noticias</h2>
+  <main>
+    <section>
+      <h2>Noticias</h2>
 
-      <article class="noticia">
-        <h3>Gran victoria del equipo local</h3>
-        <p>El equipo local ganó su partido con un marcador de 98-85, destacando la actuación de su jugador estrella.</p>
-        <div class="imagen-noticia">
-          <img src="imagenes/victoria.jpg" alt="Victoria del equipo local">
-        </div>
-      </article>
+      <article class="noticia">
+        <h3>Gran victoria del equipo local</h3>
+        <p>El equipo local ganó su partido con un marcador de 98-85, destacando la actuación de su jugador estrella.</p>
+        <div class="imagen-noticia">
+          <img src="imagenes/victoria.jpg" alt="Victoria del equipo local">
+        </div>
+      </article>
 
-      <article class="noticia">
-        <h3>Nuevos fichajes para la próxima temporada</h3>
-        <p>Se anuncian las contrataciones más importantes que prometen revolucionar la liga de básquet.</p>
-        <div class="imagen-noticia">
-          <img src="imagenes/fichajes.jpg" alt="Fichajes destacados">
-        </div>
-      </article>
+      <article class="noticia">
+        <h3>Nuevos fichajes para la próxima temporada</h3>
+        <p>Se anuncian las contrataciones más importantes que prometen revolucionar la liga de básquet.</p>
+        <div class="imagen-noticia">
+          <img src="imagenes/fichajes.jpg" alt="Fichajes destacados">
+        </div>
+      </article>
 
-      <article class="noticia">
-        <h3>Lesión de una figura clave</h3>
-        <p>Una de las estrellas del campeonato sufre una lesión que lo dejará fuera por varias semanas.</p>
-        <div class="imagen-noticia">
-          <img src="imagenes/lesion.jpg" alt="Jugador lesionado">
-        </div>
-      </article>
+      <article class="noticia">
+        <h3>Lesión de una figura clave</h3>
+        <p>Una de las estrellas del campeonato sufre una lesión que lo dejará fuera por varias semanas.</p>
+        <div class="imagen-noticia">
+          <img src="imagenes/lesion.jpg" alt="Jugador lesionado">
+        </div>
+      </article>
 
-      <article class="noticia">
-        <h3>Jornada con récords históricos</h3>
-        <p>La última jornada de la liga dejó varias marcas impresionantes, incluyendo más triples en un partido.</p>
-        <div class="imagen-noticia">
-          <img src="imagenes/records.jpg" alt="Récords en la liga">
-        </div>
-      </article>
+      <article class="noticia">
+        <h3>Jornada con récords históricos</h3>
+        <p>La última jornada de la liga dejó varias marcas impresionantes, incluyendo más triples en un partido.</p>
+        <div class="imagen-noticia">
+          <img src="imagenes/records.jpg" alt="Récords en la liga">
+        </div>
+      </article>
 
-    </section>
-  </main>
+    </section>
+  </main>
 
-  <footer>
-    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
-  </footer>
+  <footer>
+    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
