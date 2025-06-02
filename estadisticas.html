@@ -1,43 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Estadísticas - Sitio de Básquet</title>
-  <link rel="stylesheet" href="estilo.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estadísticas - Sitio de Básquet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #e0f7fa;
+    }
+
+    header {
+      background-color: #004d40;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #a7ffeb;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #004d40;
+      background-color: #a7ffeb;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #64ffda;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #b2dfdb;
+    }
+
+    .jugador {
+      margin-bottom: 2rem;
+    }
+
+    .jugador h3 {
+      margin-bottom: 0.5rem;
+      color: #18ffff;
+    }
+
+    .jugador ul {
+      padding-left: 1.2rem;
+    }
+
+    .jugador img {
+      display: block;
+      margin: 1rem auto 0;
+      max-width: 200px;
+      border-radius: 8px;
+      border: 2px solid #18ffff;
+    }
+
+    footer {
+      background-color: #004d40;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #a7ffeb;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Estadísticas</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="equipos.html">Equipos</a></li>
-        <li><a href="jugadores.html">Jugadores</a></li>
-        <li><a href="estadisticas.html">Estadísticas</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header>
+    <h1>Estadísticas</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="equipos.html">Equipos</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="estadisticas.html">Estadísticas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <main>
-    <section>
-      <h2>Estadísticas</h2>
-      <p>Consulta estadísticas detalladas de equipos y jugadores, incluyendo puntos por partido, rebotes, asistencias y más.</p>
-      <ul>
-        <li>Jugador con más puntos: <strong>Stephen Curry</strong></li>
-        <li>Mejor porcentaje de triples: <strong>Klay Thompson</strong></li>
-        <li>Mayor promedio de asistencias: <strong>Chris Paul</strong></li>
-      </ul>
-    </section>
-  </main>
+  <main>
+    <section>
+      <h2>Estadísticas de Jugadores</h2>
 
-  <footer>
-    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
-  </footer>
+      <div class="jugador">
+        <h3>Stephen Curry</h3>
+        <ul>
+          <li>Puntos por partido: 30.1</li>
+          <li>Asistencias por partido: 6.2</li>
+          <li>Porcentaje de triples: 42%</li>
+        </ul>
+        <img src="imagenes/stephen-curry.jpg" alt="Stephen Curry" />
+      </div>
 
-  <script src="script.js"></script>
+      <div class="jugador">
+        <h3>LeBron James</h3>
+        <ul>
+          <li>Puntos por partido: 27.8</li>
+          <li>Asistencias por partido: 7.4</li>
+          <li>Rebotes por partido: 7.2</li>
+        </ul>
+        <img src="imagenes/lebron-james.jpg" alt="LeBron James" />
+      </div>
+
+      <div class="jugador">
+        <h3>Klay Thompson</h3>
+        <ul>
+          <li>Puntos por partido: 21.1</li>
+          <li>Porcentaje de triples: 41%</li>
+          <li>Minutos por partido: 32</li>
+        </ul>
+        <img src="imagenes/klay-thompson.jpg" alt="Klay Thompson" />
+      </div>
+
+      <div class="jugador">
+        <h3>Giannis Antetokounmpo</h3>
+        <ul>
+          <li>Puntos por partido: 28.9</li>
+          <li>Rebotes por partido: 11.0</li>
+          <li>Bloqueos por partido: 1.3</li>
+        </ul>
+        <img src="imagenes/giannis.jpg" alt="Giannis Antetokounmpo" />
+      </div>
+
+      <div class="jugador">
+        <h3>Chris Paul</h3>
+        <ul>
+          <li>Asistencias por partido: 9.1</li>
+          <li>Robos por partido: 2.1</li>
+          <li>Porcentaje de tiros libres: 88%</li>
+        </ul>
+        <img src="imagenes/chris-paul.jpg" alt="Chris Paul" />
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
