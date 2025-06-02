@@ -101,6 +101,11 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+  nav a.activo {
+  font-weight: bold;
+  color: #ffa500;
+  border-bottom: 2px solid #ffa500;
+  }
 
   nav ul li {
     margin: 0.5rem 0;
