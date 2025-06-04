@@ -17,6 +17,7 @@
       padding: 1rem 1.5rem;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: relative;
     }
 
     header h1 {
@@ -48,11 +49,7 @@
       font-weight: 600;
       font-size: 1rem;
       box-shadow: 0 2px 6px rgba(255, 111, 0, 0.3);
-      transition: 
-        background-color 0.3s ease, 
-        color 0.3s ease, 
-        box-shadow 0.3s ease,
-        transform 0.2s ease;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
       user-select: none;
     }
 
@@ -63,6 +60,51 @@
       box-shadow: 0 4px 12px rgba(255, 111, 0, 0.7);
       transform: translateY(-3px);
       outline: none;
+    }
+
+    /* Botón hamburguesa */
+    .menu-toggle {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 5px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+        width: 200px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
     }
 
     main {
@@ -89,7 +131,6 @@
       font-size: 1rem;
     }
 
-    /* Botones con estilo moderno */
     button {
       background: linear-gradient(45deg, #6a11cb, #2575fc);
       color: white;
@@ -118,13 +159,39 @@
       font-size: 0.9rem;
       box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
     }
+
+    .btn-atras {
+      margin-bottom: 1rem;
+      background-color: transparent;
+      border: 2px solid #ff6f00;
+      color: #ff6f00;
+      padding: 0.5rem 1.2rem;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-atras:hover {
+      background-color: #ff6f00;
+      color: white;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Sitio de Básquet</h1>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav>
-      <ul>
+      <ul id="menu">
         <li><a href="PaginaMenu.html">Inicio</a></li>
         <li><a href="equipos.html">Equipos</a></li>
         <li><a href="jugadores.html">Jugadores</a></li>
@@ -137,17 +204,20 @@
   </header>
 
   <main>
+    <!-- Botón de atrás -->
+    <button class="btn-atras" onclick="history.back()">← Atrás</button>
+
     <section>
       <h2>Contacto</h2>
-      <form action="https://formspree.io/f/abcxyz123" method="POST"> <!-- Reemplaza con tu URL real -->
-        <label for="nombre">Nombre:</label><br />
-        <input type="text" id="nombre" name="nombre" required /><br /><br />
+      <form action="https://formspree.io/f/xeokoqva" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
 
-        <label for="email">Correo electrónico:</label><br />
-        <input type="email" id="email" name="email" required /><br /><br />
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
 
-        <label for="mensaje">Mensaje:</label><br />
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br /><br />
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
         <button type="submit">Enviar</button>
       </form>
@@ -157,6 +227,12 @@
   <footer>
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
 </body>
-</html>
+  </html>
