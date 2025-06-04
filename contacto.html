@@ -62,17 +62,24 @@
       font-size: 1rem;
     }
 
+    /* Botones con estilo moderno */
     button {
-      background-color: #ff6f00;
+      background: linear-gradient(45deg, #6a11cb, #2575fc);
       color: white;
       border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
       cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(37, 117, 252, 0.4);
+      transition: background 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
-      background-color: #ff8f00;
+      background: linear-gradient(45deg, #2575fc, #6a11cb);
+      box-shadow: 0 6px 12px rgba(37, 117, 252, 0.7);
+      transform: translateY(-3px);
     }
 
     footer {
@@ -123,5 +130,4 @@
   </footer>
   <script src="script.js"></script>
 </body>
-  </html>
-  
+</html>
