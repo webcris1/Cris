@@ -1,12 +1,86 @@
-   <!DOCTYPE html>
+   <!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sitio de Básquet - Inicio</title>
-  <link rel="stylesheet" href="estilo.css" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('imagenes/fondo.jpg'); /* Cambia esto por tu imagen */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #ffffff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #00b894, #0984e3);
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: linear-gradient(135deg, #55efc4, #74b9ff);
+      transform: translateY(-2px);
+    }
+
+    main {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      min-height: 60vh;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ffffff;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <h1>Sitio de Básquet</h1>
     <nav>
@@ -32,8 +106,8 @@
   <footer>
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
   </footer>
-   <script src="script.js"></script>
+
+  <script src="script.js"></script>
 
 </body>
-  </html>
-
+</html>
