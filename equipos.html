@@ -1,128 +1,213 @@
-<main>
-  <section>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sitio de Básquet - Equipos Destacados</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-      body {
-        font-family: 'Roboto', sans-serif;
-        background: linear-gradient(to right, #001219, #005f73);
-        color: #ffffff;
-        margin: 0;
-        padding: 0;
-      }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #001219, #005f73);
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
 
-      section {
-        background-color: rgba(255, 255, 255, 0.05);
-        padding: 40px 20px;
-        max-width: 1000px;
-        margin: auto;
-        border-radius: 10px;
-      }
+    header {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
 
-      h2 {
-        text-align: center;
-        font-size: 2.5em;
-        margin-bottom: 30px;
-        color: #ffdd57;
-      }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ff6f00;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
 
-      p {
-        text-align: center;
-        font-size: 1.2em;
-        margin-bottom: 40px;
-      }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
 
-      .equipo {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
+    nav a {
+      text-decoration: none;
+      color: #ff6f00;
+      background-color: rgba(255, 111, 0, 0.15);
+      padding: 0.6rem 1.4rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(255, 111, 0, 0.3);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
 
-      .equipo h3 {
-        font-size: 1.7em;
-        margin-bottom: 10px;
-        color: #ffd166;
-      }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ff6f00;
+      color: white;
+      box-shadow: 0 4px 12px rgba(255, 111, 0, 0.7);
+      transform: translateY(-3px);
+      outline: none;
+    }
 
-      .equipo p {
-        line-height: 1.6;
-        font-size: 1.05em;
-      }
+    section {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 10px;
+    }
 
-      .equipo img {
-        width: 100%;
-        max-width: 400px;
-        display: block;
-        margin: 15px auto;
-        border-radius: 10px;
-      }
+    h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #ffdd57;
+    }
 
-      .boton {
-        display: block;
-        width: fit-content;
-        margin: 30px auto 0;
-        background-color: #ff6b6b;
-        color: white;
-        text-decoration: none;
-        padding: 12px 24px;
-        border-radius: 30px;
-        font-weight: bold;
-        font-size: 1em;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-      }
+    p {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
 
-      .boton:hover {
-        background-color: #fa5252;
-        transform: scale(1.05);
-      }
-    </style>
+    .equipo {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
-    <h2>Equipos Destacados</h2>
-    <p>Aquí te presentamos una selección de equipos importantes en el mundo del básquet, con datos históricos, estilo de juego y figuras destacadas.</p>
+    .equipo h3 {
+      font-size: 1.7em;
+      margin-bottom: 10px;
+      color: #ffd166;
+    }
 
-    <div class="equipo">
-      <h3>Los Halcones</h3>
-      <p><strong>Fundación:</strong> 1985<br>
-         <strong>Ubicación:</strong> Ciudad Central<br>
-         <strong>Estilo de juego:</strong> Defensa intensa y contraataque rápido.<br>
-         <strong>Palmarés:</strong> 6 campeonatos nacionales y 2 internacionales.<br>
-         <strong>Jugadores destacados:</strong> Carlos Méndez (base), Javier Soto (pivot).</p>
-      <img src="imagenes/8306cbd4e4d0ffdb785059aca732a90c.jpg" alt="Equipo Los Halcones" />
-    </div>
+    .equipo p {
+      line-height: 1.6;
+      font-size: 1.05em;
+    }
 
-    <div class="equipo">
-      <h3>Estrellas del Norte</h3>
-      <p><strong>Fundación:</strong> 1992<br>
-         <strong>Ubicación:</strong> Puerto Norte<br>
-         <strong>Estilo de juego:</strong> Ataque veloz, con triples como arma principal.<br>
-         <strong>Palmarés:</strong> 4 títulos nacionales, 1 subcampeonato continental.<br>
-         <strong>Jugadores destacados:</strong> Esteban Ramírez (escolta), Leo Silva (alero).</p>
-      <img src="imagenes/14737579530767_990x0.jpg" alt="Equipo Estrellas del Norte" />
-    </div>
+    .equipo img {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 15px auto;
+      border-radius: 10px;
+    }
 
-    <div class="equipo">
-      <h3>Tigres del Sur</h3>
-      <p><strong>Fundación:</strong> 2001<br>
-         <strong>Ubicación:</strong> Villa Sur<br>
-         <strong>Estilo de juego:</strong> Juego físico y transiciones rápidas.<br>
-         <strong>Palmarés:</strong> Finalistas en 3 temporadas consecutivas.<br>
-         <strong>Jugadores destacados:</strong> Tomás Araya (ala-pivot), Nahuel Ríos (base).</p>
-      <img src="imagenes/depositphotos_8842910-stock-photo-basketball-game.jpg" alt="Equipo Tigres del Sur" />
-    </div>
+    .boton {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      background-color: #ff6b6b;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
-    <div class="equipo">
-      <h3>Águilas Doradas</h3>
-      <p><strong>Fundación:</strong> 1970<br>
-         <strong>Ubicación:</strong> Altos de Oro<br>
-         <strong>Estilo de juego:</strong> Juego clásico, dominio del rebote y control del ritmo.<br>
-         <strong>Palmarés:</strong> 10 campeonatos locales, 3 copas regionales.<br>
-         <strong>Jugadores destacados:</strong> Daniel Torres (pivot), Emiliano Vera (base).</p>
-      <img src="imagenes/jordan-lebron-kobe-bryant-1920.jpg" alt="Equipo Águilas Doradas" />
-    </div>
+    .boton:hover {
+      background-color: #fa5252;
+      transform: scale(1.05);
+    }
 
-    <a href="https://www.google.com/search?q=jugadores+actuales+de+la+NBA" target="_blank" class="boton">Ver más</a>
+    footer {
+      background-color: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sitio de Básquet</h1>
+    <nav>
+      <ul>
+        <li><a href="PaginaMenu.html">Inicio</a></li>
+        <li><a href="equipos.html">Equipos</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="estadisticas.html">Estadísticas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  </section>
-</main>
+  <main>
+    <section>
+      <h2>Equipos Destacados</h2>
+      <p>Aquí te presentamos una selección de equipos importantes en el mundo del básquet, con datos históricos, estilo de juego y figuras destacadas.</p>
+
+      <div class="equipo">
+        <h3>Los Halcones</h3>
+        <p><strong>Fundación:</strong> 1985<br>
+          <strong>Ubicación:</strong> Ciudad Central<br>
+          <strong>Estilo de juego:</strong> Defensa intensa y contraataque rápido.<br>
+          <strong>Palmarés:</strong> 6 campeonatos nacionales y 2 internacionales.<br>
+          <strong>Jugadores destacados:</strong> Carlos Méndez (base), Javier Soto (pivot).</p>
+        <img src="imagenes/8306cbd4e4d0ffdb785059aca732a90c.jpg" alt="Equipo Los Halcones" />
+      </div>
+
+      <div class="equipo">
+        <h3>Estrellas del Norte</h3>
+        <p><strong>Fundación:</strong> 1992<br>
+          <strong>Ubicación:</strong> Puerto Norte<br>
+          <strong>Estilo de juego:</strong> Ataque veloz, con triples como arma principal.<br>
+          <strong>Palmarés:</strong> 4 títulos nacionales, 1 subcampeonato continental.<br>
+          <strong>Jugadores destacados:</strong> Esteban Ramírez (escolta), Leo Silva (alero).</p>
+        <img src="imagenes/14737579530767_990x0.jpg" alt="Equipo Estrellas del Norte" />
+      </div>
+
+      <div class="equipo">
+        <h3>Tigres del Sur</h3>
+        <p><strong>Fundación:</strong> 2001<br>
+          <strong>Ubicación:</strong> Villa Sur<br>
+          <strong>Estilo de juego:</strong> Juego físico y transiciones rápidas.<br>
+          <strong>Palmarés:</strong> Finalistas en 3 temporadas consecutivas.<br>
+          <strong>Jugadores destacados:</strong> Tomás Araya (ala-pivot), Nahuel Ríos (base).</p>
+        <img src="imagenes/depositphotos_8842910-stock-photo-basketball-game.jpg" alt="Equipo Tigres del Sur" />
+      </div>
+
+      <div class="equipo">
+        <h3>Águilas Doradas</h3>
+        <p><strong>Fundación:</strong> 1970<br>
+          <strong>Ubicación:</strong> Altos de Oro<br>
+          <strong>Estilo de juego:</strong> Juego clásico, dominio del rebote y control del ritmo.<br>
+          <strong>Palmarés:</strong> 10 campeonatos locales, 3 copas regionales.<br>
+          <strong>Jugadores destacados:</strong> Daniel Torres (pivot), Emiliano Vera (base).</p>
+        <img src="imagenes/jordan-lebron-kobe-bryant-1920.jpg" alt="Equipo Águilas Doradas" />
+      </div>
+
+      <a href="https://www.google.com/search?q=jugadores+actuales+de+la+NBA" target="_blank" class="boton">Ver más</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
+  </footer>
+</body>
+  </html>
