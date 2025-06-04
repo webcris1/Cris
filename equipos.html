@@ -5,70 +5,77 @@
 
       body {
         font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to right, #001219, #005f73);
+        color: #ffffff;
         margin: 0;
         padding: 0;
-        background-image: url('imagenes/lal.png'); /* Asegúrate de tener esta imagen */
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: #f4f4f4;
       }
 
       section {
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 50px 25px;
-        max-width: 1100px;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 40px 20px;
+        max-width: 1000px;
         margin: auto;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
       }
 
       h2 {
         text-align: center;
         font-size: 2.5em;
         margin-bottom: 30px;
-        color: #ffcc00;
+        color: #ffdd57;
       }
 
-      section > p {
+      p {
         text-align: center;
-        font-size: 1.1em;
+        font-size: 1.2em;
         margin-bottom: 40px;
-        color: #dddddd;
       }
 
       .equipo {
-        background-color: rgba(255, 255, 255, 0.08);
-        border: 1px solid #444;
-        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
         padding: 20px;
-        margin-bottom: 35px;
-        transition: transform 0.3s ease;
-      }
-
-      .equipo:hover {
-        transform: scale(1.02);
-        background-color: rgba(255, 255, 255, 0.12);
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
 
       .equipo h3 {
-        font-size: 1.8em;
-        margin-bottom: 12px;
-        color: #ffe066;
+        font-size: 1.7em;
+        margin-bottom: 10px;
+        color: #ffd166;
       }
 
       .equipo p {
-        font-size: 1em;
         line-height: 1.6;
-        color: #eeeeee;
+        font-size: 1.05em;
       }
 
       .equipo img {
         width: 100%;
-        max-width: 500px;
-        margin-top: 15px;
+        max-width: 400px;
+        display: block;
+        margin: 15px auto;
         border-radius: 10px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .boton {
+        display: block;
+        width: fit-content;
+        margin: 30px auto 0;
+        background-color: #ff6b6b;
+        color: white;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1em;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .boton:hover {
+        background-color: #fa5252;
+        transform: scale(1.05);
       }
     </style>
 
@@ -114,5 +121,8 @@
          <strong>Jugadores destacados:</strong> Daniel Torres (pivot), Emiliano Vera (base).</p>
       <img src="imagenes/jordan-lebron-kobe-bryant-1920.jpg" alt="Equipo Águilas Doradas" />
     </div>
+
+    <a href="https://www.google.com/search?q=jugadores+actuales+de+la+NBA" target="_blank" class="boton">Ver más</a>
+
   </section>
 </main>
