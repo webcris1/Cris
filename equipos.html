@@ -3,206 +3,221 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sitio de Básquet - Equipos Destacados</title>
+  <title>Sitio de Básquet - Jugadores</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #001219, #005f73);
-      color: #ffffff;
+      font-family: 'Georgia', serif;
+      background-color: #f0fdf4;
+      color: #1b4332;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
     }
 
-    header {
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 1rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 2rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #ff6f00;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    /* Sidebar - menú en columna */
+    nav {
+      background-color: #2d6a4f;
+      padding: 20px;
+      width: 220px;
     }
 
     nav ul {
       list-style: none;
       padding: 0;
-      margin: 1rem 0 0 0;
+      margin: 0;
       display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    nav a {
+    nav ul li a {
       text-decoration: none;
-      color: #ff6f00;
-      background-color: rgba(255, 111, 0, 0.15);
-      padding: 0.6rem 1.4rem;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 2px 6px rgba(255, 111, 0, 0.3);
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-      user-select: none;
+      color: #ffffff;
+      background: linear-gradient(135deg, #52b788, #40916c);
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: block;
+      text-align: center;
     }
 
-    nav a:hover,
-    nav a:focus {
-      background-color: #ff6f00;
-      color: white;
-      box-shadow: 0 4px 12px rgba(255, 111, 0, 0.7);
-      transform: translateY(-3px);
-      outline: none;
+    nav ul li a:hover {
+      background-color: #74c69d;
     }
 
-    section {
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 40px 20px;
+    main {
+      flex: 1;
+      padding: 30px 20px;
       max-width: 1000px;
       margin: auto;
-      border-radius: 10px;
+    }
+
+    header {
+      display: none; /* Se oculta en escritorio */
     }
 
     h2 {
+      color: #2d6a4f;
+      font-size: 2em;
+      border-bottom: 2px solid #95d5b2;
+      padding-bottom: 8px;
+      margin-bottom: 25px;
       text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 30px;
-      color: #ffdd57;
     }
 
-    p {
-      text-align: center;
-      font-size: 1.2em;
-      margin-bottom: 40px;
+    .jugadores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
-    .equipo {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    .equipo h3 {
-      font-size: 1.7em;
-      margin-bottom: 10px;
-      color: #ffd166;
-    }
-
-    .equipo p {
-      line-height: 1.6;
-      font-size: 1.05em;
-    }
-
-    .equipo img {
-      width: 100%;
-      max-width: 400px;
-      display: block;
-      margin: 15px auto;
+    .jugador {
+      background-color: #ffffff;
+      border: 1px solid #cce3d3;
       border-radius: 10px;
+      padding: 20px;
+      width: 260px;
+      min-height: 360px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
     }
 
-    .boton {
-      display: block;
-      width: fit-content;
-      margin: 30px auto 0;
-      background-color: #ff6b6b;
-      color: white;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 1em;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+    .jugador img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 12px;
     }
 
-    .boton:hover {
-      background-color: #fa5252;
-      transform: scale(1.05);
+    .jugador h3 {
+      margin: 8px 0 4px;
+      color: #1b4332;
+      font-size: 1.2em;
+    }
+
+    .jugador p {
+      font-size: 0.95em;
+      margin: 4px 0;
     }
 
     footer {
-      background-color: rgba(0, 0, 0, 0.75);
+      background-color: #1b4332;
+      color: #ffffff;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    /* =================== MÓVIL =================== */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #2d6a4f;
+        color: #ffffff;
+        padding: 15px 20px;
+      }
+
+      #menu-toggle {
+        display: none;
+      }
+
+      .menu-icon {
+        font-size: 1.5em;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      /* Mostrar menú al marcar checkbox */
+      #menu-toggle:checked + nav {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        background-color: #2d6a4f;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Encabezado solo en móvil -->
   <header>
     <h1>Sitio de Básquet</h1>
-    <nav>
-      <ul>
-        <li><a href="PaginaMenu.html">Inicio</a></li>
-        <li><a href="equipos.html">Equipos</a></li>
-        <li><a href="jugadores.html">Jugadores</a></li>
-        <li><a href="estadisticas.html">Estadísticas</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
   </header>
 
+  <!-- Toggle oculto para mostrar menú en móvil -->
+  <input type="checkbox" id="menu-toggle" style="display: none;" />
+
+  <!-- Menú lateral o desplegable -->
+  <nav>
+    <ul>
+      <li><a href="PaginaMenu.html">Inicio</a></li>
+      <li><a href="equipos.html">Equipos</a></li>
+      <li><a href="jugadores.html">Jugadores</a></li>
+      <li><a href="estadisticas.html">Estadísticas</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
   <main>
     <section>
-      <h2>Equipos Destacados</h2>
-      <p>Aquí te presentamos una selección de equipos importantes en el mundo del básquet, con datos históricos, estilo de juego y figuras destacadas.</p>
+      <h2>Jugadores</h2>
+      <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
+    </section>
 
-      <div class="equipo">
-        <h3>Los Halcones</h3>
-        <p><strong>Fundación:</strong> 1985<br>
-          <strong>Ubicación:</strong> Ciudad Central<br>
-          <strong>Estilo de juego:</strong> Defensa intensa y contraataque rápido.<br>
-          <strong>Palmarés:</strong> 6 campeonatos nacionales y 2 internacionales.<br>
-          <strong>Jugadores destacados:</strong> Carlos Méndez (base), Javier Soto (pivot).</p>
-        <img src="imagenes/8306cbd4e4d0ffdb785059aca732a90c.jpg" alt="Equipo Los Halcones" />
+    <section class="jugadores">
+      <div class="jugador">
+        <img src="imagenes/f.elconfidencial.com_original_236_ed6_b5c_236ed6b5c25a9208033865461ff0c31e.jpg" alt="Jugador 1" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Base</p>
+        <p>Puntos por partido: 20.5</p>
+        <p>Asistencias por partido: 6.3</p>
+        <p>Rebotes por partido: 4.1</p>
+        <p>Robos por partido: 1.9</p>
+        <p>Equipo: Lakers</p>
       </div>
 
-      <div class="equipo">
-        <h3>Estrellas del Norte</h3>
-        <p><strong>Fundación:</strong> 1992<br>
-          <strong>Ubicación:</strong> Puerto Norte<br>
-          <strong>Estilo de juego:</strong> Ataque veloz, con triples como arma principal.<br>
-          <strong>Palmarés:</strong> 4 títulos nacionales, 1 subcampeonato continental.<br>
-          <strong>Jugadores destacados:</strong> Esteban Ramírez (escolta), Leo Silva (alero).</p>
-        <img src="imagenes/14737579530767_990x0.jpg" alt="Equipo Estrellas del Norte" />
+      <div class="jugador">
+        <img src="imagenes/kevin-durant-nike-phoenix-nba-28042023.jpg" alt="Jugador 2" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Escolta</p>
+        <p>Puntos por partido: 18.7</p>
+        <p>Asistencias por partido: 3.8</p>
+        <p>Rebotes por partido: 5.0</p>
+        <p>Bloqueos por partido: 0.8</p>
+        <p>Equipo: Hornets</p>
       </div>
 
-      <div class="equipo">
-        <h3>Tigres del Sur</h3>
-        <p><strong>Fundación:</strong> 2001<br>
-          <strong>Ubicación:</strong> Villa Sur<br>
-          <strong>Estilo de juego:</strong> Juego físico y transiciones rápidas.<br>
-          <strong>Palmarés:</strong> Finalistas en 3 temporadas consecutivas.<br>
-          <strong>Jugadores destacados:</strong> Tomás Araya (ala-pivot), Nahuel Ríos (base).</p>
-        <img src="imagenes/depositphotos_8842910-stock-photo-basketball-game.jpg" alt="Equipo Tigres del Sur" />
+      <div class="jugador">
+        <img src="imagenes/3-4.jpg" alt="Jugador 3" />
+        <h3>Nombre del Jugador</h3>
+        <p>Posición: Alero</p>
+        <p>Puntos por partido: 22.3</p>
+        <p>Asistencias por partido: 4.2</p>
+        <p>Rebotes por partido: 7.5</p>
+        <p>Robos por partido: 1.4</p>
+        <p>Equipo: Warriors</p>
       </div>
-
-      <div class="equipo">
-        <h3>Águilas Doradas</h3>
-        <p><strong>Fundación:</strong> 1970<br>
-          <strong>Ubicación:</strong> Altos de Oro<br>
-          <strong>Estilo de juego:</strong> Juego clásico, dominio del rebote y control del ritmo.<br>
-          <strong>Palmarés:</strong> 10 campeonatos locales, 3 copas regionales.<br>
-          <strong>Jugadores destacados:</strong> Daniel Torres (pivot), Emiliano Vera (base).</p>
-        <img src="imagenes/jordan-lebron-kobe-bryant-1920.jpg" alt="Equipo Águilas Doradas" />
-      </div>
-
-      <a href="https://www.google.com/search?q=jugadores+actuales+de+la+NBA" target="_blank" class="boton">Ver más</a>
     </section>
   </main>
 
@@ -210,4 +225,4 @@
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
   </footer>
 </body>
-  </html>
+</html>
