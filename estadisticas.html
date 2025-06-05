@@ -12,8 +12,13 @@
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: row;
+      flex-direction: column; /* Cambiado a columna */
       min-height: 100vh;
+    }
+
+    .contenido {
+      display: flex;
+      flex: 1; /* Ocupa el espacio restante */
     }
 
     nav {
@@ -112,11 +117,10 @@
       opacity: 1;
     }
 
-   footer {
+    footer {
       background-color: rgba(0, 0, 0, 0.75);
-      text-align: center ;
+      text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
       font-size: 0.9rem;
       box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
     }
@@ -160,6 +164,10 @@
         padding: 15px 0;
         background-color: #2d6a4f;
       }
+
+      .contenido {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 480px) {
@@ -183,65 +191,67 @@
 
   <input type="checkbox" id="menu-toggle" style="display: none;" />
 
-  <nav>
-    <ul>
-      <li><a href="PaginaMenu.html">Inicio</a></li>
-      <li><a href="equipos.html">Equipos</a></li>
-      <li><a href="jugadores.html">Jugadores</a></li>
-      <li><a href="estadisticas.html">Estadísticas</a></li>
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="galeria.html">Galería</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+  <div class="contenido">
+    <nav>
+      <ul>
+        <li><a href="PaginaMenu.html">Inicio</a></li>
+        <li><a href="equipos.html">Equipos</a></li>
+        <li><a href="jugadores.html">Jugadores</a></li>
+        <li><a href="estadisticas.html">Estadísticas</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-  <main>
-    <section>
-      <h2>Jugadores</h2>
-      <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
-    </section>
+    <main>
+      <section>
+        <h2>Jugadores</h2>
+        <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
+      </section>
 
-    <section class="jugadores">
-      <div class="jugador-hover">
-        <img src="imagenes/f.elconfidencial.com_original_236_ed6_b5c_236ed6b5c25a9208033865461ff0c31e.jpg" alt="Jugador 1" />
-        <div class="stats-hover">
-          <h3>Nombre del Jugador</h3>
-          <p>Posición: Base</p>
-          <p>Puntos: 20.5</p>
-          <p>Asistencias: 6.3</p>
-          <p>Rebotes: 4.1</p>
-          <p>Robos: 1.9</p>
-          <p>Equipo: Lakers</p>
+      <section class="jugadores">
+        <div class="jugador-hover">
+          <img src="imagenes/f.elconfidencial.com_original_236_ed6_b5c_236ed6b5c25a9208033865461ff0c31e.jpg" alt="Jugador 1" />
+          <div class="stats-hover">
+            <h3>Nombre del Jugador</h3>
+            <p>Posición: Base</p>
+            <p>Puntos: 20.5</p>
+            <p>Asistencias: 6.3</p>
+            <p>Rebotes: 4.1</p>
+            <p>Robos: 1.9</p>
+            <p>Equipo: Lakers</p>
+          </div>
         </div>
-      </div>
 
-      <div class="jugador-hover">
-        <img src="imagenes/kevin-durant-nike-phoenix-nba-28042023.jpg" alt="Jugador 2" />
-        <div class="stats-hover">
-          <h3>Nombre del Jugador</h3>
-          <p>Posición: Escolta</p>
-          <p>Puntos: 18.7</p>
-          <p>Asistencias: 3.8</p>
-          <p>Rebotes: 5.0</p>
-          <p>Bloqueos: 0.8</p>
-          <p>Equipo: Hornets</p>
+        <div class="jugador-hover">
+          <img src="imagenes/kevin-durant-nike-phoenix-nba-28042023.jpg" alt="Jugador 2" />
+          <div class="stats-hover">
+            <h3>Nombre del Jugador</h3>
+            <p>Posición: Escolta</p>
+            <p>Puntos: 18.7</p>
+            <p>Asistencias: 3.8</p>
+            <p>Rebotes: 5.0</p>
+            <p>Bloqueos: 0.8</p>
+            <p>Equipo: Hornets</p>
+          </div>
         </div>
-      </div>
 
-      <div class="jugador-hover">
-        <img src="imagenes/3-4.jpg" alt="Jugador 3" />
-        <div class="stats-hover">
-          <h3>Nombre del Jugador</h3>
-          <p>Posición: Alero</p>
-          <p>Puntos: 22.3</p>
-          <p>Asistencias: 4.2</p>
-          <p>Rebotes: 7.5</p>
-          <p>Robos: 1.4</p>
-          <p>Equipo: Warriors</p>
+        <div class="jugador-hover">
+          <img src="imagenes/3-4.jpg" alt="Jugador 3" />
+          <div class="stats-hover">
+            <h3>Nombre del Jugador</h3>
+            <p>Posición: Alero</p>
+            <p>Puntos: 22.3</p>
+            <p>Asistencias: 4.2</p>
+            <p>Rebotes: 7.5</p>
+            <p>Robos: 1.4</p>
+            <p>Equipo: Warriors</p>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </div>
 
   <footer>
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
