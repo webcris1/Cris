@@ -207,7 +207,7 @@
 
     <section>
       <h2>Contacto</h2>
-      <form action="https://formsubmit.co/cristian.yahir1507@gmail.com" method="POST" id="form-contacto">
+      <form action="https://formsubmit.co/ajax/cristian.yahir1507@gmail.com" method="POST" id="form-contacto">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required />
 
@@ -218,7 +218,7 @@
         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
         <button type="submit">Enviar</button>
-        <input type="hidden" name="_next" value="contacto.html?enviado=1" />
+        <input type="hidden" name="_captcha" value="false" />
       </form>
       <div id="mensaje-gracias" style="display:none; margin-top:1rem; color:#ff6f00; font-weight:bold; font-size:1.2rem;">¡Gracias por contactarnos! Tu mensaje ha sido enviado.</div>
     </section>
@@ -233,11 +233,28 @@
       const menu = document.getElementById('menu');
       menu.classList.toggle('active');
     }
-    // Mostrar mensaje de gracias si la URL contiene ?enviado=1
-    window.addEventListener('DOMContentLoaded', function() {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('enviado') === '1') {
-        document.getElementById('mensaje-gracias').style.display = 'block';
+    // Envío AJAX para FormSubmit y mostrar mensaje de gracias sin recargar ni salir de la página
+    document.getElementById('form-contacto').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const mensajeGracias = document.getElementById('mensaje-gracias');
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.reset();
+          mensajeGracias.style.display = 'block';
+        } else {
+          mensajeGracias.textContent = 'Hubo un error al enviar el mensaje. Intenta más tarde.';
+          mensajeGracias.style.display = 'block';
+        }
+      } catch (error) {
+        mensajeGracias.textContent = 'Hubo un error al enviar el mensaje. Intenta más tarde.';
+        mensajeGracias.style.display = 'block';
       }
     });
   </script>
