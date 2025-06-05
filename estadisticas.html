@@ -16,7 +16,6 @@
       min-height: 100vh;
     }
 
-    /* Sidebar - menú en columna */
     nav {
       background-color: #2d6a4f;
       padding: 20px;
@@ -55,7 +54,7 @@
     }
 
     header {
-      display: none; /* Se oculta en escritorio */
+      display: none;
     }
 
     h2 {
@@ -74,33 +73,43 @@
       justify-content: center;
     }
 
-    .jugador {
-      background-color: #ffffff;
-      border: 1px solid #cce3d3;
-      border-radius: 10px;
-      padding: 20px;
-      width: 260px;
-      min-height: 360px;
-      text-align: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-    }
-
-    .jugador img {
+    .jugador-hover {
+      position: relative;
       width: 100%;
-      height: auto;
-      border-radius: 6px;
-      margin-bottom: 12px;
+      max-width: 260px;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      background-color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
-    .jugador h3 {
-      margin: 8px 0 4px;
-      color: #1b4332;
-      font-size: 1.2em;
+    .jugador-hover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
     }
 
-    .jugador p {
-      font-size: 0.95em;
-      margin: 4px 0;
+    .stats-hover {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .jugador-hover:hover .stats-hover,
+    .jugador-hover:active .stats-hover {
+      opacity: 1;
     }
 
     footer {
@@ -111,7 +120,6 @@
       margin-top: 50px;
     }
 
-    /* =================== MÓVIL =================== */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -141,7 +149,6 @@
         user-select: none;
       }
 
-      /* Mostrar menú al marcar checkbox */
       #menu-toggle:checked + nav {
         display: block;
       }
@@ -153,19 +160,28 @@
         background-color: #2d6a4f;
       }
     }
+
+    @media (max-width: 480px) {
+      .jugador-hover {
+        max-width: 100%;
+        aspect-ratio: 4 / 5;
+      }
+
+      .stats-hover {
+        font-size: 0.85rem;
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Encabezado solo en móvil -->
   <header>
     <h1>Sitio de Básquet</h1>
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
   </header>
 
-  <!-- Toggle oculto para mostrar menú en móvil -->
   <input type="checkbox" id="menu-toggle" style="display: none;" />
 
-  <!-- Menú lateral o desplegable -->
   <nav>
     <ul>
       <li><a href="PaginaMenu.html">Inicio</a></li>
@@ -178,45 +194,50 @@
     </ul>
   </nav>
 
-  <!-- Contenido principal -->
   <main>
     <section>
-      <h2>estadísticas</h2>
+      <h2>Jugadores</h2>
       <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
     </section>
 
     <section class="jugadores">
-      <div class="jugador">
+      <div class="jugador-hover">
         <img src="imagenes/f.elconfidencial.com_original_236_ed6_b5c_236ed6b5c25a9208033865461ff0c31e.jpg" alt="Jugador 1" />
-        <h3>Nombre del Jugador</h3>
-        <p>Posición: Base</p>
-        <p>Puntos por partido: 20.5</p>
-        <p>Asistencias por partido: 6.3</p>
-        <p>Rebotes por partido: 4.1</p>
-        <p>Robos por partido: 1.9</p>
-        <p>Equipo: Lakers</p>
+        <div class="stats-hover">
+          <h3>Nombre del Jugador</h3>
+          <p>Posición: Base</p>
+          <p>Puntos: 20.5</p>
+          <p>Asistencias: 6.3</p>
+          <p>Rebotes: 4.1</p>
+          <p>Robos: 1.9</p>
+          <p>Equipo: Lakers</p>
+        </div>
       </div>
 
-      <div class="jugador">
+      <div class="jugador-hover">
         <img src="imagenes/kevin-durant-nike-phoenix-nba-28042023.jpg" alt="Jugador 2" />
-        <h3>Nombre del Jugador</h3>
-        <p>Posición: Escolta</p>
-        <p>Puntos por partido: 18.7</p>
-        <p>Asistencias por partido: 3.8</p>
-        <p>Rebotes por partido: 5.0</p>
-        <p>Bloqueos por partido: 0.8</p>
-        <p>Equipo: Hornets</p>
+        <div class="stats-hover">
+          <h3>Nombre del Jugador</h3>
+          <p>Posición: Escolta</p>
+          <p>Puntos: 18.7</p>
+          <p>Asistencias: 3.8</p>
+          <p>Rebotes: 5.0</p>
+          <p>Bloqueos: 0.8</p>
+          <p>Equipo: Hornets</p>
+        </div>
       </div>
 
-      <div class="jugador">
+      <div class="jugador-hover">
         <img src="imagenes/3-4.jpg" alt="Jugador 3" />
-        <h3>Nombre del Jugador</h3>
-        <p>Posición: Alero</p>
-        <p>Puntos por partido: 22.3</p>
-        <p>Asistencias por partido: 4.2</p>
-        <p>Rebotes por partido: 7.5</p>
-        <p>Robos por partido: 1.4</p>
-        <p>Equipo: Warriors</p>
+        <div class="stats-hover">
+          <h3>Nombre del Jugador</h3>
+          <p>Posición: Alero</p>
+          <p>Puntos: 22.3</p>
+          <p>Asistencias: 4.2</p>
+          <p>Rebotes: 7.5</p>
+          <p>Robos: 1.4</p>
+          <p>Equipo: Warriors</p>
+        </div>
       </div>
     </section>
   </main>
