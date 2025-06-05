@@ -27,7 +27,6 @@
       font-size: 2em;
     }
 
-    /* Menú */
     #menu-toggle {
       display: none;
     }
@@ -62,39 +61,75 @@
       transform: translateY(-2px);
     }
 
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 1rem;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
     .imagen-hover {
-  position: relative;
-  display: inline-block;
-}
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
 
-.imagen-hover img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
+    .imagen-hover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+      border-radius: 10px;
+    }
 
-.texto-hover {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 0 0 10px 10px;
-  font-size: 1rem;
-}
+    .imagen-hover:hover img {
+      transform: scale(1.05);
+    }
 
-/* Mostrar texto al pasar el mouse o tocar en móviles */
-.imagen-hover:hover .texto-hover,
-.imagen-hover:active .texto-hover {
-  opacity: 1;
-}
+    .texto-hover {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 0 0 10px 10px;
+      font-size: 1rem;
+    }
 
-    /* Responsive */
+    .imagen-hover:hover .texto-hover,
+    .imagen-hover:active .texto-hover {
+      opacity: 1;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
     @media (max-width: 768px) {
       nav ul {
         display: none;
@@ -125,51 +160,24 @@
       }
     }
 
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
+    @media (max-width: 480px) {
+      .imagen-hover {
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+      }
 
-    h2 {
-      font-size: 2em;
-      margin-bottom: 1rem;
-    }
-
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .galeria img {
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      .texto-hover {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Sitio de Básquet</h1>
-
-    <!-- Menú hamburguesa -->
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
     <nav>
       <ul>
         <li><a href="PaginaMenu.html">Inicio</a></li>
@@ -183,36 +191,35 @@
     </nav>
   </header>
 
-
-  <div class="galeria">
-  <div class="imagen-hover">
-    <img src="imagenes/car.jpg" alt="LeBron James" />
-    <div class="texto-hover">LeBron James en acción</div>
-  </div>
-
-  <div class="imagen-hover">
-    <img src="imagenes/14771259567706.jpg" alt="Partido de básquet" />
-    <div class="texto-hover">Partido de alto nivel</div>
-  </div>
-
-  <div class="imagen-hover">
-    <img src="imagenes/J6M2EY6BARDE5HQXLGIYBBZZTU.jpg" alt="MVP" />
-    <div class="texto-hover">Jugador más valioso</div>
-  </div>
-
-  <div class="imagen-hover">
-    <img src="imagenes/USATSI_23074895_18_55_6_702.jpg" alt="Celebración" />
-    <div class="texto-hover">Celebración tras el triunfo</div>
-  </div>
-
-  <div class="imagen-hover">
-    <img src="imagenes/Nueva-camiseta-Phoenix-Suns-temporada-23-24.jpg" alt="Camiseta Suns" />
-    <div class="texto-hover">Nueva camiseta de Phoenix Suns</div>
-  </div>
-</div>
+  <main>
+    <h2>Galería</h2>
+    <div class="galeria">
+      <div class="imagen-hover">
+        <img src="imagenes/car.jpg" alt="LeBron James" />
+        <div class="texto-hover">LeBron James en acción</div>
+      </div>
+      <div class="imagen-hover">
+        <img src="imagenes/14771259567706.jpg" alt="Partido de básquet" />
+        <div class="texto-hover">Partido de alto nivel</div>
+      </div>
+      <div class="imagen-hover">
+        <img src="imagenes/J6M2EY6BARDE5HQXLGIYBBZZTU.jpg" alt="MVP" />
+        <div class="texto-hover">Jugador más valioso</div>
+      </div>
+      <div class="imagen-hover">
+        <img src="imagenes/USATSI_23074895_18_55_6_702.jpg" alt="Celebración" />
+        <div class="texto-hover">Celebración tras el triunfo</div>
+      </div>
+      <div class="imagen-hover">
+        <img src="imagenes/Nueva-camiseta-Phoenix-Suns-temporada-23-24.jpg" alt="Camiseta Suns" />
+        <div class="texto-hover">Nueva camiseta de Phoenix Suns</div>
+      </div>
+    </div>
+  </main>
 
   <footer>
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
+
