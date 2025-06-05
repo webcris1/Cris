@@ -18,6 +18,7 @@
       color: #ffffff;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
@@ -26,10 +27,16 @@
       letter-spacing: 1px;
     }
 
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
     nav ul {
       list-style: none;
       padding: 0;
-      margin: 15px 0 0;
+      margin: 0;
       display: flex;
       justify-content: center;
       gap: 12px;
@@ -101,21 +108,29 @@
       border-radius: 6px;
       margin-bottom: 12px;
     }
-    
+
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
+      nav {
+        position: static;
+        margin-top: 10px;
       }
 
-    .jugador h3 {
-      margin: 8px 0 4px;
-      color: #1b4332;
-      font-size: 1.2em;
-    }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
 
-    .jugador p {
-      font-size: 0.95em;
-      margin: 4px 0;
+      .jugador h3 {
+        margin: 8px 0 4px;
+        color: #1b4332;
+        font-size: 1.2em;
+      }
+
+      .jugador p {
+        font-size: 0.95em;
+        margin: 4px 0;
+      }
     }
 
     footer {
@@ -192,5 +207,4 @@
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
   </footer>
 </body>
-          </html>
-                                   
+</html>
