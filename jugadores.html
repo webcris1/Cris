@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sitio de Básquet - Jugadores</title>
   <style>
-    /* Fondo general y tipografía */
     body {
       font-family: 'Georgia', serif;
-      background-color: #f0fdf4; /* verde muy claro */
-      color: #1b4332; /* verde oscuro */
+      background-color: #f0fdf4;
+      color: #1b4332;
       margin: 0;
       padding: 0;
     }
 
-    /* Encabezado */
     header {
-      background-color: #2d6a4f; /* verde fuerte */
+      background-color: #2d6a4f;
       color: #ffffff;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
@@ -27,7 +26,15 @@
       font-size: 2.2em;
     }
 
-    /* Navegación */
+    /* Menú */
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+
     nav ul {
       list-style: none;
       padding: 0;
@@ -41,17 +48,47 @@
     nav ul li a {
       text-decoration: none;
       color: #ffffff;
-      background-color: #40916c; /* verde medio */
+      background-color: #40916c;
       padding: 8px 14px;
       border-radius: 4px;
       transition: background-color 0.3s ease;
     }
 
     nav ul li a:hover {
-      background-color: #74c69d; /* verde claro */
+      background-color: #74c69d;
     }
 
-    /* Contenido principal */
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #2d6a4f;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        z-index: 999;
+      }
+
+      #menu-toggle:checked + label + nav ul {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+        font-size: 2rem;
+        color: #ffffff;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+    }
+
     main {
       padding: 20px;
     }
@@ -62,6 +99,7 @@
       border-bottom: 2px solid #95d5b2;
       padding-bottom: 5px;
       margin-bottom: 15px;
+      text-align: center;
     }
 
     .jugadores {
@@ -97,7 +135,6 @@
       font-size: 0.95em;
     }
 
-    /* Pie de página */
     footer {
       background-color: #1b4332;
       color: #ffffff;
@@ -110,6 +147,11 @@
 <body>
   <header>
     <h1>Sitio de Básquet</h1>
+
+    <!-- Menú hamburguesa -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
     <nav>
       <ul>
         <li><a href="PaginaMenu.html">Inicio</a></li>
@@ -126,11 +168,10 @@
   <main>
     <section>
       <h2>Jugadores</h2>
-      <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
+      <p style="text-align:center;">Conocé a los jugadores más destacados y sus impresionantes estadísticas.</p>
     </section>
 
     <section class="jugadores">
-      <!-- Jugador 1 -->
       <div class="jugador">
         <img src="imagenes/jayson-tatum_103.webp" alt="Jugador 1" />
         <h3>Nombre del Jugador</h3>
@@ -139,7 +180,6 @@
         <p>Equipo: Equipo Verde</p>
       </div>
 
-      <!-- Jugador 2 -->
       <div class="jugador">
         <img src="imagenes/images (3).jpeg" alt="Jugador 2" />
         <h3>Nombre del Jugador</h3>
@@ -148,7 +188,6 @@
         <p>Equipo: Canasta Verde</p>
       </div>
 
-      <!-- Jugador 3 (puedes duplicar este bloque para más jugadores) -->
       <div class="jugador">
         <img src="imagenes/01000000-c0a8-0242-12ca-08db61600c3b_w408_r0_s.jpg" alt="Jugador 3" />
         <h3>Nombre del Jugador</h3>
