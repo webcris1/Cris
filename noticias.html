@@ -25,7 +25,6 @@
       font-size: 2.5rem;
     }
 
-    /* Estilo del ícono hamburguesa */
     #menu-toggle {
       display: none;
     }
@@ -60,7 +59,6 @@
       transform: translateY(-2px);
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       nav ul {
         display: none;
@@ -132,9 +130,13 @@
     }
 
     .imagen-noticia img {
-      max-width: 100%;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1/1;
+      object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      max-height: 300px;
     }
 
     footer {
@@ -150,11 +152,8 @@
 <body>
   <header>
     <h1>Sitio de Básquet</h1>
-
-    <!-- Menú hamburguesa -->
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
     <nav>
       <ul>
         <li><a href="PaginaMenu.html">Inicio</a></li>
