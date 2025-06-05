@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sitio de Básquet - Inicio</title>
+
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -49,7 +51,7 @@
       background: linear-gradient(135deg, #00b894, #0984e3);
       color: white;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
     }
 
@@ -94,7 +96,21 @@
     p {
       font-size: 1.2em;
       max-width: 800px;
+      margin: 0 auto 30px auto;
+    }
+
+    .video-container {
+      max-width: 800px;
       margin: 0 auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     footer {
@@ -104,7 +120,7 @@
       padding: 15px 0;
     }
 
-    /* RESPONSIVE MENU */
+    /* Responsive */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -120,7 +136,7 @@
         width: 200px;
         padding: 20px;
         border-radius: 10px;
-        display: none; /* Oculto por defecto */
+        display: none;
       }
 
       nav ul.active {
@@ -129,11 +145,10 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <h1>Sitio de Básquet</h1>
-
     <!-- Botón Hamburguesa -->
     <button class="menu-toggle" onclick="toggleMenu()">
       <span></span>
@@ -158,6 +173,14 @@
     <section>
       <h2>Inicio</h2>
       <p>Bienvenido al sitio de básquet donde encontrarás toda la información sobre tus equipos y jugadores favoritos.</p>
+
+      <!-- Video embebido -->
+      <div class="video-container">
+        <video controls poster="imagenes/preview.jpg">
+          <source src="imagenes/video-basquet.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      </div>
     </section>
   </main>
 
@@ -171,6 +194,6 @@
       menu.classList.toggle('active');
     }
   </script>
-
 </body>
-               </html>
+
+</html>
