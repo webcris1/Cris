@@ -11,26 +11,16 @@
       color: #1b4332;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
     }
 
-    header {
-      background-color: #2d6a4f;
-      color: #ffffff;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.4em;
-      letter-spacing: 1px;
-    }
-
+    /* Sidebar - menú en columna */
     nav {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      background-color: #2d6a4f;
+      padding: 20px;
+      width: 220px;
     }
 
     nav ul {
@@ -38,32 +28,34 @@
       padding: 0;
       margin: 0;
       display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 15px;
     }
 
     nav ul li a {
       text-decoration: none;
       color: #ffffff;
       background: linear-gradient(135deg, #52b788, #40916c);
-      padding: 10px 18px;
-      border-radius: 30px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-      transition: transform 0.2s ease, background-color 0.3s ease;
+      padding: 10px 16px;
+      border-radius: 20px;
       font-weight: bold;
-      font-size: 0.95em;
+      display: block;
+      text-align: center;
     }
 
     nav ul li a:hover {
-      transform: translateY(-2px);
       background-color: #74c69d;
     }
 
     main {
+      flex: 1;
       padding: 30px 20px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
+    }
+
+    header {
+      display: none; /* Se oculta en escritorio */
     }
 
     h2 {
@@ -73,12 +65,6 @@
       padding-bottom: 8px;
       margin-bottom: 25px;
       text-align: center;
-    }
-
-    p {
-      text-align: center;
-      font-size: 1.1em;
-      margin-bottom: 40px;
     }
 
     .jugadores {
@@ -97,9 +83,6 @@
       min-height: 360px;
       text-align: center;
       box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
     }
 
     .jugador img {
@@ -109,28 +92,15 @@
       margin-bottom: 12px;
     }
 
-    @media (max-width: 768px) {
-      nav {
-        position: static;
-        margin-top: 10px;
-      }
+    .jugador h3 {
+      margin: 8px 0 4px;
+      color: #1b4332;
+      font-size: 1.2em;
+    }
 
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .jugador h3 {
-        margin: 8px 0 4px;
-        color: #1b4332;
-        font-size: 1.2em;
-      }
-
-      .jugador p {
-        font-size: 0.95em;
-        margin: 4px 0;
-      }
+    .jugador p {
+      font-size: 0.95em;
+      margin: 4px 0;
     }
 
     footer {
@@ -140,32 +110,82 @@
       padding: 15px 0;
       margin-top: 50px;
     }
+
+    /* =================== MÓVIL =================== */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #2d6a4f;
+        color: #ffffff;
+        padding: 15px 20px;
+      }
+
+      #menu-toggle {
+        display: none;
+      }
+
+      .menu-icon {
+        font-size: 1.5em;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      /* Mostrar menú al marcar checkbox */
+      #menu-toggle:checked + nav {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        background-color: #2d6a4f;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Encabezado solo en móvil -->
   <header>
     <h1>Sitio de Básquet</h1>
-    <nav>
-      <ul>
-        <li><a href="PaginaMenu.html">Inicio</a></li>
-        <li><a href="equipos.html">Equipos</a></li>
-        <li><a href="jugadores.html">Jugadores</a></li>
-        <li><a href="estadisticas.html">Estadísticas</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
   </header>
 
+  <!-- Toggle oculto para mostrar menú en móvil -->
+  <input type="checkbox" id="menu-toggle" style="display: none;" />
+
+  <!-- Menú lateral o desplegable -->
+  <nav>
+    <ul>
+      <li><a href="PaginaMenu.html">Inicio</a></li>
+      <li><a href="equipos.html">Equipos</a></li>
+      <li><a href="jugadores.html">Jugadores</a></li>
+      <li><a href="estadisticas.html">Estadísticas</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
   <main>
     <section>
-      <h2>estadísticas</h2>
+      <h2>Jugadores</h2>
       <p>Conoce a los jugadores más destacados y sus impresionantes estadísticas.</p>
     </section>
 
     <section class="jugadores">
-      <!-- Jugador 1 -->
       <div class="jugador">
         <img src="imagenes/f.elconfidencial.com_original_236_ed6_b5c_236ed6b5c25a9208033865461ff0c31e.jpg" alt="Jugador 1" />
         <h3>Nombre del Jugador</h3>
@@ -174,10 +194,9 @@
         <p>Asistencias por partido: 6.3</p>
         <p>Rebotes por partido: 4.1</p>
         <p>Robos por partido: 1.9</p>
-        <p>Equipo: Equipo lakers </p>
+        <p>Equipo: Lakers</p>
       </div>
 
-      <!-- Jugador 2 -->
       <div class="jugador">
         <img src="imagenes/kevin-durant-nike-phoenix-nba-28042023.jpg" alt="Jugador 2" />
         <h3>Nombre del Jugador</h3>
@@ -186,10 +205,9 @@
         <p>Asistencias por partido: 3.8</p>
         <p>Rebotes por partido: 5.0</p>
         <p>Bloqueos por partido: 0.8</p>
-        <p>Equipo: hornets</p>
+        <p>Equipo: Hornets</p>
       </div>
 
-      <!-- Jugador 3 -->
       <div class="jugador">
         <img src="imagenes/3-4.jpg" alt="Jugador 3" />
         <h3>Nombre del Jugador</h3>
