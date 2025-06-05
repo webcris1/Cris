@@ -218,9 +218,9 @@
         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
         <button type="submit">Enviar</button>
-        <input type="hidden" name="_next" value="https://tu-dominio.com/gracias.html" />
+        <input type="hidden" name="_next" value="contacto.html?enviado=1" />
       </form>
-      <div id="mensaje-gracias" style="display:none; margin-top:1rem; color:#ff6f00; font-weight:bold; font-size:1.2rem;"></div>
+      <div id="mensaje-gracias" style="display:none; margin-top:1rem; color:#ff6f00; font-weight:bold; font-size:1.2rem;">¡Gracias por contactarnos! Tu mensaje ha sido enviado.</div>
     </section>
   </main>
 
@@ -233,6 +233,13 @@
       const menu = document.getElementById('menu');
       menu.classList.toggle('active');
     }
+    // Mostrar mensaje de gracias si la URL contiene ?enviado=1
+    window.addEventListener('DOMContentLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('enviado') === '1') {
+        document.getElementById('mensaje-gracias').style.display = 'block';
+      }
+    });
   </script>
 </body>
 </html>
