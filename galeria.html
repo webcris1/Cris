@@ -62,6 +62,38 @@
       transform: translateY(-2px);
     }
 
+    .imagen-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.imagen-hover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.texto-hover {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 10px 10px;
+  font-size: 1rem;
+}
+
+/* Mostrar texto al pasar el mouse o tocar en móviles */
+.imagen-hover:hover .texto-hover,
+.imagen-hover:active .texto-hover {
+  opacity: 1;
+}
+
     /* Responsive */
     @media (max-width: 768px) {
       nav ul {
@@ -151,18 +183,33 @@
     </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Galería</h2>
-      <div class="galeria">
-        <img src="imagenes/car.jpg" alt="lebron" />
-        <img src="imagenes/14771259567706.jpg" alt="Partido de básquet" />
-        <img src="imagenes/J6M2EY6BARDE5HQXLGIYBBZZTU.jpg" alt="Premio al mejor jugador" />
-        <img src="imagenes/USATSI_23074895_18_55_6_702.jpg" alt="Premio al mejor jugador" />
-        <img src="imagenes/Nueva-camiseta-Phoenix-Suns-temporada-23-24.jpg" alt="Camiseta Suns" />
-      </div>
-    </section>
-  </main>
+
+  <div class="galeria">
+  <div class="imagen-hover">
+    <img src="imagenes/car.jpg" alt="LeBron James" />
+    <div class="texto-hover">LeBron James en acción</div>
+  </div>
+
+  <div class="imagen-hover">
+    <img src="imagenes/14771259567706.jpg" alt="Partido de básquet" />
+    <div class="texto-hover">Partido de alto nivel</div>
+  </div>
+
+  <div class="imagen-hover">
+    <img src="imagenes/J6M2EY6BARDE5HQXLGIYBBZZTU.jpg" alt="MVP" />
+    <div class="texto-hover">Jugador más valioso</div>
+  </div>
+
+  <div class="imagen-hover">
+    <img src="imagenes/USATSI_23074895_18_55_6_702.jpg" alt="Celebración" />
+    <div class="texto-hover">Celebración tras el triunfo</div>
+  </div>
+
+  <div class="imagen-hover">
+    <img src="imagenes/Nueva-camiseta-Phoenix-Suns-temporada-23-24.jpg" alt="Camiseta Suns" />
+    <div class="texto-hover">Nueva camiseta de Phoenix Suns</div>
+  </div>
+</div>
 
   <footer>
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
