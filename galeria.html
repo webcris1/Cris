@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-image: url('imagenes/9c0d5e2a350de7c858f12753afea6912.jpg'); /* Asegúrate que esta imagen exista */
+      background-image: url('imagenes/9c0d5e2a350de7c858f12753afea6912.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -19,11 +19,21 @@
       background-color: rgba(0, 0, 0, 0.6);
       padding: 1.5rem;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
       margin: 0;
       font-size: 2em;
+    }
+
+    /* Menú */
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
     }
 
     nav ul {
@@ -50,6 +60,37 @@
     nav a:hover {
       background: linear-gradient(135deg, #ffa726, #fb8c00);
       transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        right: 10px;
+        background-color: rgba(0,0,0,0.9);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+        z-index: 999;
+      }
+
+      #menu-toggle:checked + label + nav ul {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 1000;
+      }
     }
 
     main {
@@ -92,6 +133,11 @@
 <body>
   <header>
     <h1>Sitio de Básquet</h1>
+
+    <!-- Menú hamburguesa -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
     <nav>
       <ul>
         <li><a href="PaginaMenu.html">Inicio</a></li>
@@ -113,7 +159,7 @@
         <img src="imagenes/14771259567706.jpg" alt="Partido de básquet" />
         <img src="imagenes/J6M2EY6BARDE5HQXLGIYBBZZTU.jpg" alt="Premio al mejor jugador" />
         <img src="imagenes/USATSI_23074895_18_55_6_702.jpg" alt="Premio al mejor jugador" />
-        <img src="imagenes/Nueva-camiseta-Phoenix-Suns-temporada-23-24.jpg" alt="Premio al mejor jugador" />
+        <img src="imagenes/Nueva-camiseta-Phoenix-Suns-temporada-23-24.jpg" alt="Camiseta Suns" />
       </div>
     </section>
   </main>
