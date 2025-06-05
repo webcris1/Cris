@@ -40,6 +40,10 @@
       flex-wrap: wrap;
     }
 
+    nav li {
+      margin: 0;
+    }
+
     nav a {
       text-decoration: none;
       color: #ff6f00;
@@ -62,7 +66,6 @@
       outline: none;
     }
 
-    /* Botón hamburguesa */
     .menu-toggle {
       display: none;
       position: absolute;
@@ -83,7 +86,6 @@
       margin: 5px 0;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -98,8 +100,8 @@
         right: 20px;
         padding: 20px;
         border-radius: 10px;
-        display: none;
         width: 200px;
+        display: none;
       }
 
       nav ul.active {
@@ -182,14 +184,11 @@
 <body>
   <header>
     <h1>Sitio de Básquet</h1>
-
-    <!-- Botón hamburguesa -->
     <button class="menu-toggle" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
     <nav>
       <ul id="menu">
         <li><a href="PaginaMenu.html">Inicio</a></li>
@@ -204,12 +203,11 @@
   </header>
 
   <main>
-    <!-- Botón de atrás -->
     <button class="btn-atras" onclick="history.back()">← Atrás</button>
 
     <section>
       <h2>Contacto</h2>
-     <form action="https://formspree.io/f/xeokoqva" method="POST">
+      <form action="https://formspree.io/f/xeokoqva" method="POST">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required />
 
@@ -224,7 +222,6 @@
     </section>
   </main>
 
-
   <footer>
     <p>&copy; 2025 Sitio de Básquet. Todos los derechos reservados.</p>
   </footer>
@@ -236,4 +233,4 @@
     }
   </script>
 </body>
-  </html>
+</html>
